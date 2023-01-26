@@ -9,8 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var assignmentItems = [
-    Assignments(course: "Math", description: "Homework", dueDate: Date()),
-    Assignments(course: "English", description: "Homework", dueDate: Date()),
+    Assignments(course: "Math", description: "Homework", dueDate: Date())
+    ,
+    Assignments(course: "English", description: "Homework", dueDate: Date())
+    ,
     Assignments(course: "Science", description: "Test", dueDate: Date())
     ]
     
