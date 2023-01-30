@@ -19,7 +19,16 @@ struct AddAssignmentList: View {
     static let course = ["Math","English","Science"]
     
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            Form {
+                Picker("Course", selection: $course) {
+                    ForEach(Self.course, id: \.self) { course in
+                        Text(course)
+                        
+                    }
+                }
+            }
+        }
     }
 }
 
