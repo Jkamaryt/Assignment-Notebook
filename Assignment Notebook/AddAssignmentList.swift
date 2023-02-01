@@ -34,6 +34,9 @@ struct AddAssignmentList: View {
                 DatePicker("Due Date", selection: $dueDate, displayedComponents: .date)
             }
             .navigationBarTitle("Add New Assignment", displayMode: .inline)
+            .navigationBarItems(leading: Button("Cancel") {
+                presentationMode.wrappedValue.dismiss()
+            })
             .navigationBarItems(trailing: Button("Save") {
                 if course.count > 0 && description.count > 0 {
                     let item = AssignmentItem(id: UUID(), course: course, description: description, dueDate: dueDate)
