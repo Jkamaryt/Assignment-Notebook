@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F2076838298964E800891C72 /* CountdownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2076837298964E800891C72 /* CountdownTimer.swift */; };
+		F201DA5E298AFF170041DE0B /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F201DA5D298AFF170041DE0B /* CountdownView.swift */; };
 		F2681E8B298310AB00F144EA /* AssignmentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2681E8A298310AB00F144EA /* AssignmentList.swift */; };
 		F2681E8F2983119900F144EA /* AddAssignmentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2681E8E2983119900F144EA /* AddAssignmentList.swift */; };
 		F26BECB9298188440041B59E /* Assignment_NotebookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26BECB8298188440041B59E /* Assignment_NotebookApp.swift */; };
@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F2076837298964E800891C72 /* CountdownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownTimer.swift; sourceTree = "<group>"; };
+		F201DA5D298AFF170041DE0B /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
 		F2681E8A298310AB00F144EA /* AssignmentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentList.swift; sourceTree = "<group>"; };
 		F2681E8E2983119900F144EA /* AddAssignmentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAssignmentList.swift; sourceTree = "<group>"; };
 		F26BECB5298188440041B59E /* Assignment Notebook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Assignment Notebook.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,8 +59,8 @@
 			children = (
 				F26BECB8298188440041B59E /* Assignment_NotebookApp.swift */,
 				F26BECBA298188440041B59E /* ContentView.swift */,
+				F201DA5D298AFF170041DE0B /* CountdownView.swift */,
 				F2681E8A298310AB00F144EA /* AssignmentList.swift */,
-				F2076837298964E800891C72 /* CountdownTimer.swift */,
 				F2681E8E2983119900F144EA /* AddAssignmentList.swift */,
 				F26BECBC298188450041B59E /* Assets.xcassets */,
 				F26BECBE298188450041B59E /* Preview Content */,
@@ -146,8 +146,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2076838298964E800891C72 /* CountdownTimer.swift in Sources */,
 				F2681E8F2983119900F144EA /* AddAssignmentList.swift in Sources */,
+				F201DA5E298AFF170041DE0B /* CountdownView.swift in Sources */,
 				F2681E8B298310AB00F144EA /* AssignmentList.swift in Sources */,
 				F26BECBB298188440041B59E /* ContentView.swift in Sources */,
 				F26BECB9298188440041B59E /* Assignment_NotebookApp.swift in Sources */,

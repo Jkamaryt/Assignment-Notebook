@@ -9,36 +9,41 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var assignmentList = AssignmentList()
-   @State private var showingAddAssignmentList = false
-   
+    @State private var showingAddAssignmentList = false
+    
     var body: some View {
-       NavigationView {
-           List {
-               ForEach(assignmentList.items) { item in
-                   VStack(alignment: .leading) {
-                       Text(item.course)
-                           .font(.headline)
-                       Text(item.description)
-                       Text(item.dueDate, style: .date)
-                       Text(item.time)
-                   }
-               }
-               .onMove { indices, newOffset in
-                   assignmentList.items.move(fromOffsets: indices, toOffset: newOffset)
-               }
-               .onDelete { indexSet in
-                   assignmentList.items.remove(atOffsets: indexSet)
-               }
-           }
-           .sheet(isPresented: $showingAddAssignmentList, content: {
-               AddAssignmentList(assignmentList: assignmentList)
-           })
-           .navigationBarTitle("Assignments", displayMode: .inline)
-           .navigationBarItems(leading: EditButton(), trailing: Button(action: {
-               showingAddAssignmentList = true}) {
-                   Image(systemName: "plus")
-           })
-       }
+        NavigationView {
+            VStack {
+                NavigationLink(("Countdown to Summer"), destination: CountdownView())
+                
+                List {
+                    ForEach(assignmentList.items) { item in
+                        VStack(alignment: .leading) {
+                            Text(item.course)
+                                .font(.headline)
+                            Text(item.assignment)
+                            Text(item.dueDate, style: .date)
+                            Text(item.time, style: .time)
+                        }
+                        .listRowBackground(Color.red)
+                    }
+                    .onMove { indices, newOffset in
+                        assignmentList.items.move(fromOffsets: indices, toOffset: newOffset)
+                    }
+                    .onDelete { indexSet in
+                        assignmentList.items.remove(atOffsets: indexSet)
+                    }
+                }
+                .sheet(isPresented: $showingAddAssignmentList, content: {
+                    AddAssignmentList(assignmentList: assignmentList)
+                })
+                .navigationBarTitle("Assignments", displayMode: .inline)
+                .navigationBarItems(leading: EditButton(), trailing: Button(action: {
+                    showingAddAssignmentList = true}) {
+                        Image(systemName: "plus")
+                    })
+            }.background(Color.gray.edgesIgnoringSafeArea(.all)).accentColor(Color.black)
+        }
     }
 }
 
@@ -51,7 +56,7 @@ struct ContentView_Previews: PreviewProvider {
 struct AssignmentItem: Identifiable, Codable{
     var id = UUID()
     var course = String()
-    var description = String()
+    var assignment = String()
     var dueDate = Date()
-    var time = String()
+    var time = Date()
 }
