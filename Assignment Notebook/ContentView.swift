@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     @ObservedObject var assignmentList = AssignmentList()
     @State private var showingAddAssignmentList = false
     
@@ -15,6 +16,10 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 NavigationLink(("Countdown to Summer"), destination: CountdownView())
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 6)
+                            .stroke(Color.black, lineWidth: 3).padding(-5)
+                        )
                 
                 List {
                     ForEach(assignmentList.items) { item in
@@ -25,7 +30,11 @@ struct ContentView: View {
                             Text(item.dueDate, style: .date)
                             Text(item.time, style: .time)
                         }
-                        .listRowBackground(Color.red)
+                        .foregroundColor(Color.white)
+                        .listRowBackground(Color.secondary)
+                        
+                        
+                        
                     }
                     .onMove { indices, newOffset in
                         assignmentList.items.move(fromOffsets: indices, toOffset: newOffset)
@@ -37,12 +46,18 @@ struct ContentView: View {
                 .sheet(isPresented: $showingAddAssignmentList, content: {
                     AddAssignmentList(assignmentList: assignmentList)
                 })
-                .navigationBarTitle("Assignments", displayMode: .inline)
+                .navigationBarTitle("Assignments")//, displayMode: .inline)
+                .navigationBarTitleDisplayMode(.inline)
+                .background(Color.black)
+                
                 .navigationBarItems(leading: EditButton(), trailing: Button(action: {
                     showingAddAssignmentList = true}) {
                         Image(systemName: "plus")
                     })
-            }.background(Color.gray.edgesIgnoringSafeArea(.all)).accentColor(Color.black)
+            }
+            .background(Color.mint)
+            .accentColor(Color.indigo)
+            .scrollContentBackground(.hidden)
         }
     }
 }

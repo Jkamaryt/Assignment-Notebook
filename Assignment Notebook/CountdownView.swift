@@ -26,7 +26,11 @@ struct CountdownView: View {
                 
             }
             
+            .background(Color.purple).ignoresSafeArea(.all)
+            
+            
         }
+        
     }
 }
 
